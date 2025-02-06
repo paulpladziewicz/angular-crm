@@ -1,0 +1,7 @@
+<h1>Companies</h1>
+
+<ul>
+  @for (company of companies; track company.id; let index = $index) {
+    <li>{{company.name}} - {{company.industry}}</li>
+  }
+</ul>
