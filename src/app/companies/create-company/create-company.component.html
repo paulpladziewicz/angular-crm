@@ -1,9 +1,20 @@
 <h2>Create Company</h2>
 <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
-  <div class="flex flex-col gap-2">
-    <label for="username">Username</label>
-    <input pInputText id="username" aria-describedby="username-help" />
-    <small id="username-help">Enter your username to reset your password.</small>
+  <div>
+    <label for="name">Company Name</label>
+    <input id="name" formControlName="name" />
   </div>
-  <p-button type="submit" label="Submit"  />
+  <div>
+    <label for="industry">Industry</label>
+    <input id="industry" formControlName="industry" />
+  </div>
+  <div>
+    <label for="address">Address</label>
+    <input id="address" formControlName="address" />
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <textarea rows="5" id="description" formControlName="description"></textarea>
+  </div>
+  <button type="submit">Submit</button>
 </form>

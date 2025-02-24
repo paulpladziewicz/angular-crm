@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {Button} from 'primeng/button';
-import {InputText} from 'primeng/inputtext';
 
 @Component({
   selector: 'app-create-company',
   imports: [
-    ReactiveFormsModule,
-    Button,
-    InputText
+    ReactiveFormsModule
   ],
   templateUrl: './create-company.component.html',
   styleUrl: './create-company.component.css'
@@ -38,9 +34,5 @@ export class CreateCompanyComponent implements OnInit {
     } else {
       console.log('false');
     }
-  }
-
-  get form() {
-    return this.companyForm.controls;
   }
 }
