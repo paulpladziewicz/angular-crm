@@ -10,7 +10,6 @@ import { KnobModule } from 'primeng/knob';
   styleUrl: './companies.component.css'
 })
 export class CompaniesComponent implements OnInit {
-
   companies: Company[] = [];
 
   constructor(private companyService: CompanyService) {}
@@ -20,10 +19,15 @@ export class CompaniesComponent implements OnInit {
   }
 
   fetchCompanies(): void {
-    this.companyService.getCompanies().subscribe({
+    this.companyService.getAll().subscribe({
       next: (data) => {
         this.companies = data;
       }
+    })
+  }
+
+  createCompany(company: Company): void {
+    this.companyService.create(company).subscribe({
     })
   }
 }
