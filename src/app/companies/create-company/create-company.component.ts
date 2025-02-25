@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CompanyService } from '../../services/company.service';
 
 @Component({
   selector: 'app-create-company',
@@ -10,6 +11,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
   styleUrl: './create-company.component.css'
 })
 export class CreateCompanyComponent implements OnInit {
+  companyService = inject(CompanyService);
   companyForm!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -28,11 +30,19 @@ export class CreateCompanyComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('starting');
     if (this.companyForm.valid) {
-      console.log('valid');
+      console.log(this.companyForm.value);
+      this.companyService.create(this.companyForm.value).subscribe({
+        next: (res) => {
+          console.log(res);
+        },
+        error: (e) => {
+          console.error(e);
+        }
+      });
     } else {
-      console.log('false');
+      console.log('form incomplete');
+      console.log(this.companyForm.get('name'));
     }
   }
 }
