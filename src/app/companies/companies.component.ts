@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Company, CompanyService} from '../services/company.service';
-import { ButtonModule } from 'primeng/button';
-import { KnobModule } from 'primeng/knob';
 
 @Component({
   selector: 'app-companies',
-  imports: [ButtonModule, KnobModule],
+  imports: [],
   templateUrl: './companies.component.html',
   styleUrl: './companies.component.css'
 })

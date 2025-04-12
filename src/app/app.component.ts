@@ -1,29 +1,11 @@
 import { Component } from '@angular/core';
-import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import { MenubarModule } from 'primeng/menubar';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, MenubarModule],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  items: any[] = [
-    {
-      label: 'Dashboard',
-      icon: 'pi pi-home',
-      routerLink: 'dashboard'
-    },
-    {
-      label: 'Companies',
-      icon: 'pi pi-home',
-      routerLink: 'companies'
-    },
-    {
-      label: 'Contacts',
-      icon: 'pi pi-home',
-      routerLink: 'create/company'
-    }
-  ]
 }
