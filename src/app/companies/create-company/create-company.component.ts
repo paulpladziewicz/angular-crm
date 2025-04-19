@@ -1,13 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CompanyService } from '../../services/company.service';
-import { TextInputComponent } from '@paulpladziewicz/ngx-ui';
+import { TextInputComponent, ButtonComponent } from '@paulpladziewicz/ngx-ui';
 
 @Component({
   selector: 'app-create-company',
   imports: [
     ReactiveFormsModule,
-    TextInputComponent
+    TextInputComponent,
+    ButtonComponent
   ],
   templateUrl: './create-company.component.html',
   styleUrl: './create-company.component.css'

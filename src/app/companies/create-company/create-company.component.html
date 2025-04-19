@@ -3,7 +3,7 @@
 <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="name">Company Name</label>
-    <input id="name" formControlName="name" />
+    <ngx-text-input id="name" formControlName="name" />
   </div>
   <div>
     <label for="industry">Industry</label>
@@ -17,5 +17,5 @@
     <label for="description">Description</label>
     <textarea rows="5" id="description" formControlName="description"></textarea>
   </div>
-  <button type="submit">Submit</button>
+  <ngx-button type="submit">Submit</ngx-button>
 </form>
