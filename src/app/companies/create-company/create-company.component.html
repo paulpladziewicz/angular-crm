@@ -1,21 +1,34 @@
 <h2>Create Company</h2>
-<ngx-text-input></ngx-text-input>
+
 <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="name">Company Name</label>
-    <ngx-text-input id="name" formControlName="name" />
-  </div>
-  <div>
-    <label for="industry">Industry</label>
-    <input id="industry" formControlName="industry" />
-  </div>
-  <div>
-    <label for="address">Address</label>
-    <input id="address" formControlName="address" />
-  </div>
-  <div>
-    <label for="description">Description</label>
-    <textarea rows="5" id="description" formControlName="description"></textarea>
-  </div>
-  <ngx-button type="submit">Submit</ngx-button>
+  <ngx-text-input
+    label="Company Name"
+    formControlName="name"
+  />
+
+  <ngx-text-input
+    label="Industry"
+    formControlName="industry"
+  />
+
+  <ngx-text-input
+    label="Address"
+    formControlName="address"
+  />
+
+  <label for="description">Description</label>
+  <textarea
+    id="description"
+    rows="5"
+    formControlName="description"
+    class="textarea"
+  ></textarea>
+
+  <ngx-button
+    type="submit"
+    [disabled]="companyForm.invalid"
+  >
+    Submit
+  </ngx-button>
 </form>
+
